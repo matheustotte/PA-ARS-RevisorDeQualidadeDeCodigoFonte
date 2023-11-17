@@ -1,0 +1,18 @@
+<h1 id="tableLabel">Projetos para Revisão</h1>
+
+<p>Estes são os projetos que foram selecionados pelos Coordenadores para revisão.</p>
+
+<p *ngIf="!repositories"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="repositories">
+  <thead>
+    <tr>
+      <th>Owner/Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repository of repositories">
+      <td>{{ repository }}</td>
+    </tr>
+  </tbody>
+</table>
