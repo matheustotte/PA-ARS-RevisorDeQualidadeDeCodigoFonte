@@ -7,17 +7,21 @@
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="projects">
   <thead>
     <tr>
-      <th>Delphi 5</th>
+      <th></th>
+      <th>As sugestões de alterações estão <code>em vermelho</code></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let project of projects">
       <td>{{ project.project }}</td>
       <td>
-        <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="project.compilation">
+        <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="project.tecnicDebits">
           <tbody>
-            <tr *ngFor="let linha of project.compilation">
-              <td>{{ linha }}</td>
+            <tr *ngFor="let debit of project.tecnicDebits">
+              <td>
+                {{ debit.description }}
+                <code>{{ debit.suggestion }}</code>
+              </td>
             </tr>
           </tbody>
         </table>

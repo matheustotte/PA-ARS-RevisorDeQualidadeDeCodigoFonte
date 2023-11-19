@@ -14,7 +14,11 @@ export class DesenvolvedorComponent {
     }, error => console.error(error));
   }
 }
+interface DebitoTecnico {
+  description: string;
+  suggestion: string;
+}
 interface ProjetoCompilado {
   project: string;
-  compilation: string[];
+  tecnicDebits: DebitoTecnico[];
 }

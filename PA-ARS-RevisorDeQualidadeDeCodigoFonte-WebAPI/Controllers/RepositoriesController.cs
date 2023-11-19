@@ -25,7 +25,7 @@ namespace PA_ARS_RevisorDeQualidadeDeCodigoFonte_WebAPI.Controllers
         public IEnumerable<RepositorioComProjetos> Get()
         {
             var client = new GitHubClient(new ProductHeaderValue("PA-ARS-RevisorDeQualidadeDeCodigoFonte-WebAPI"));
-            var credentials = new Credentials("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");
+            var credentials = new Credentials("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");
             client.Credentials = credentials;
 
             var repositories = client.Repository.GetAllForCurrent();
