@@ -7,16 +7,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './coordenador/counter.component';
 import { DesenvolvedorComponent } from './desenvolvedor/desenvolvedor.component';
+import { CoordenadorComponent } from './coordenador/coordenador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    DesenvolvedorComponent
+    DesenvolvedorComponent,
+    CoordenadorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,8 +24,8 @@ import { DesenvolvedorComponent } from './desenvolvedor/desenvolvedor.component'
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'desenvolvedor', component: DesenvolvedorComponent },
+      { path: 'coordenador', component: CoordenadorComponent },
     ])
   ],
   providers: [],

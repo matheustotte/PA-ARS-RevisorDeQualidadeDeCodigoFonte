@@ -6,11 +6,15 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './desenvolvedor.component.html'
 })
 export class DesenvolvedorComponent {
-  public repositories: string[];
+  public projects: ProjetoCompilado[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<string[]>(baseUrl + 'ProjetosParaRevisao').subscribe(result => {
-      this.repositories = result;
+    http.get<ProjetoCompilado[]>(baseUrl + 'ProjetosCompilados').subscribe(result => {
+      this.projects = result;
     }, error => console.error(error));
   }
+}
+interface ProjetoCompilado {
+  project: string;
+  compilation: string[];
 }

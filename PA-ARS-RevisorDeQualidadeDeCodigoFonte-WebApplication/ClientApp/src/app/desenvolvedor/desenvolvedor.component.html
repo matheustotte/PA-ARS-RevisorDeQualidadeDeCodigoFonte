@@ -1,18 +1,27 @@
-<h1 id="tableLabel">Projetos para Revisão</h1>
+<h1 id="tableLabel">Delphi 5 para Revisão</h1>
 
 <p>Estes são os projetos que foram selecionados pelos Coordenadores para revisão.</p>
 
-<p *ngIf="!repositories"><em>Loading...</em></p>
+<p *ngIf="!projects"><em>Carregando...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="repositories">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="projects">
   <thead>
     <tr>
-      <th>Owner/Name</th>
+      <th>Delphi 5</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let repository of repositories">
-      <td>{{ repository }}</td>
+    <tr *ngFor="let project of projects">
+      <td>{{ project.project }}</td>
+      <td>
+        <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="project.compilation">
+          <tbody>
+            <tr *ngFor="let linha of project.compilation">
+              <td>{{ linha }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
     </tr>
   </tbody>
 </table>

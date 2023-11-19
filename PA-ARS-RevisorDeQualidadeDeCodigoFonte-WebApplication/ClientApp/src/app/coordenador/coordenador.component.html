@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Delphi 5 nos repositórios do GitHub</h1>
+
+<p>Selecione os projetos que deverão ser revisados pelos Desenvolvedores.</p>
+
+<p *ngIf="!repositories"><em>Carregando...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="repositories">
+  <thead>
+    <tr>
+      <th>Repositórios</th>
+      <th>Delphi 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repository of repositories">
+      <td>{{ repository.repositoryName }}</td>
+      <td>
+        <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="repository.projects">
+          <tbody>
+            <tr *ngFor="let project of repository.projects">
+              <td><input type="checkbox" [checked]="project.projectSelected" /></td>
+              <td>{{ project.projectPath }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
